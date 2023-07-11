@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('layouts/master');
 });
 
- 
+
 Route::get('/greeting', function () {
     return 'Hello World';
 });
@@ -27,19 +27,19 @@ Route::get('/greeting', function () {
 Route::get('/user', [UserController::class, 'user2']);
 
 Route::get('/post/{id}/{name}', function ($id, $name) {
-    return 'Hello this is post number '.$id. " ".$name;
+    return 'Hello this is post number ' . $id . " " . $name;
 });
 
 
-Route::get('/admin/posts/example', array('as'=>'admin.home' ,function () {
+Route::get('/admin/posts/example', array('as' => 'admin.home', function () {
 
     $url = route('admin.home');
 
-    return "This is the URL ".$url;
-})); 
+    return "This is the URL " . $url;
+}));
 
 // Route::get('/post', 'PostController@index'); 
- Route::get('/post/{id}', [PostController::class, 'index']);
+Route::get('/post/{id}', [PostController::class, 'index']);
 // {
 //     //return 'Hello this is post number '.$id. " ".$name;
 // });
